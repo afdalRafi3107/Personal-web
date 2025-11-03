@@ -27,10 +27,16 @@ export default function Hero() {
               Education
             </a>
             <a
-              href="#about"
+              href="#skill"
               className="text-md hover:text-orange-400 transition-colors duration-300"
             >
-              About
+              Skills
+            </a>
+            <a
+              href="#projects"
+              className="text-md hover:text-orange-400 transition-colors duration-300"
+            >
+              Projects
             </a>
           </div>
         </nav>
@@ -76,9 +82,7 @@ export default function Hero() {
 
               {/* email */}
               <Link
-                href="https://github.com/afdalRafi3107"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:afdalrafi660@mail.com?subject="
                 className="duration-300 text-orange-500 text-3xl hover:scale-125 hover:text-orange-600 transition-colors"
               >
                 <FaEnvelope />

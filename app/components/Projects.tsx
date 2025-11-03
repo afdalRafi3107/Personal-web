@@ -39,7 +39,10 @@ export default function Projects() {
   ];
   return (
     <>
-      <section className="w-full flex flex-col gap-10 justify-center py-15">
+      <section
+        id="projects"
+        className="w-full flex flex-col gap-10 justify-center py-15"
+      >
         {/* garis */}
         <div className=" relative flex flex-row w-full items-center">
           <div className=" text-white px-2 py-2 w-fit rounded font-bold text-sm nptransform whitespace-nowrap shadow-xl bg-orange-500">

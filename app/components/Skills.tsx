@@ -57,7 +57,7 @@ export default function Skills() {
   return (
     <>
       <div
-        id="education"
+        id="skill"
         className="relative w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent"
       >
         <div className="absolute inset-0 blur-md bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
