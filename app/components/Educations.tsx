@@ -2,7 +2,7 @@
 "use client";
 import Lottie from "lottie-react";
 import Laptop from "./icon/Laptop.json";
-
+import { motion } from "framer-motion";
 export default function Education() {
   return (
     <>
@@ -26,15 +26,22 @@ export default function Education() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Illustration */}
-            <div className="flex justify-center">
-              <Lottie
-                animationData={Laptop}
-                loop={true}
-                style={{ width: "100%" }}
-                rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {/* Left Illustration */}
+              <div className="flex justify-center">
+                <Lottie
+                  animationData={Laptop}
+                  loop={true}
+                  style={{ width: "100%" }}
+                  rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+                />
+              </div>
+            </motion.div>
 
             {/* list sekolah */}
             <div className="space-y-6 px-5">
@@ -55,21 +62,28 @@ export default function Education() {
                   place: "SMA Kartika I-5 Padang",
                 },
               ].map((edu, i) => (
-                <div
-                  key={i}
-                  className="relative border border-purple-700/40 bg-gradient-to-r from-[#1a103d]/60 to-[#0b0c1a]/60 rounded-xl p-6 shadow-[0_0_20px_rgba(147,51,234,0.3)] backdrop-blur-md transition-transform hover:scale-[1.02]"
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
                 >
-                  {/* Glow border line */}
-                  <div className="absolute inset-0 rounded-xl border border-purple-500/20 blur-md"></div>
+                  <div
+                    key={i}
+                    className="relative border border-purple-700/40 bg-gradient-to-r from-[#1a103d]/60 to-[#0b0c1a]/60 rounded-xl p-6 shadow-[0_0_20px_rgba(147,51,234,0.3)] backdrop-blur-md transition-transform hover:scale-[1.02]"
+                  >
+                    {/* Glow border line */}
+                    <div className="absolute inset-0 rounded-xl border border-purple-500/20 blur-md"></div>
 
-                  <div className="relative">
-                    <p className="text-sm text-teal-400 mb-1">{edu.year}</p>
-                    <h3 className="text-lg font-semibold text-white">
-                      {edu.major}
-                    </h3>
-                    <p className="text-sm text-gray-400">{edu.place}</p>
+                    <div className="relative">
+                      <p className="text-sm text-teal-400 mb-1">{edu.year}</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        {edu.major}
+                      </h3>
+                      <p className="text-sm text-gray-400">{edu.place}</p>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

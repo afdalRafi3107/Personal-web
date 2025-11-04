@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
@@ -54,56 +56,63 @@ export default function Projects() {
         {/* grid project */}
         <div className="grid md:grid-cols-2 gap-6 w-full">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="w-full p-5 group overflow-hidden border border-purple-700/40 bg-gradient-to-b from-[#1a103d]/60 to-[#0b0c1a]/60 shadow-[0_0_20px_rgba(147,51,234,0.3)] rounded-xl hover:border-primary/50 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500  group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-              </div>
-
-              <div className="p-6 space-y-4 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
-                <h3 className="text-2xl font-semibold group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div
+                key={index}
+                className="w-full p-5 group overflow-hidden border border-purple-700/40 bg-gradient-to-b from-[#1a103d]/60 to-[#0b0c1a]/60 shadow-[0_0_20px_rgba(147,51,234,0.3)] rounded-xl hover:border-primary/50 transition-all duration-300 animate-fade-in h-full"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500  group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
                 </div>
 
-                <div className="flex gap-4 pt-4">
-                  {project.demo != "" && (
+                <div className="p-6 space-y-4 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
+                  <h3 className="text-2xl font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-4 pt-4">
+                    {project.demo != "" && (
+                      <a
+                        href={`${project.demo}`}
+                        className=" text-sm text-primary hover:underline"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+
                     <a
-                      href={`${project.demo}`}
+                      href={`${project.git}`}
                       className=" text-sm text-primary hover:underline"
                     >
-                      Live Demo
+                      Source Code
                     </a>
-                  )}
-
-                  <a
-                    href={`${project.git}`}
-                    className=" text-sm text-primary hover:underline"
-                  >
-                    Source Code
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
