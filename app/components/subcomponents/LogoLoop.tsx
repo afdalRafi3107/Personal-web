@@ -205,7 +205,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     pauseOnHover = true,
     fadeOut = false,
     fadeOutColor,
-    scaleOnHover = false,
+    scaleOnHover = true,
     ariaLabel = "Partner logos",
     className,
     style,
@@ -354,7 +354,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         return (
           <li
             className={cx(
-              "flex-none mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]",
+              "flex-none mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1] p-2 bg-gradient-to-r from-[#1a103d]/80 to-[#0b0c1a]/60 rounded-xl border border-purple-700/40 rounded-2xl",
               scaleOnHover && "overflow-visible group/item"
             )}
             key={key}

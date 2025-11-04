@@ -94,7 +94,7 @@ export default function Hero() {
             <img
               src="/img/Profile.png"
               alt="Hero Illustration"
-              className="w-[300px] rounded-2xl max-w-md mx-auto mt-10 md:mt-0 drop-shadow-[0_0_20px_rgba(147,51,234,0.5)]"
+              className="w-[300px] rounded-2xl max-w-md mx-auto mt-10 border border-purple-700/40 md:mt-0 drop-shadow-[0_0_20px_rgba(147,51,234,0.5)]"
             />
           </div>
         </div>
