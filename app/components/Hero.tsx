@@ -9,35 +9,37 @@ export default function Hero() {
     <>
       <div id="hero" className="relative overflow-hidden">
         {/* efek cahaya di belakang */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(128,0,255,0.2)_0%,transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(128,0,255,0.2)_0%,transparent_25%)] md:bg-[radial-gradient(circle_at_top,rgba(128,0,255,0.2)_0%,transparent_70%)]"></div>
 
         <nav className="relative flex flex-row w-full py-5 justify-between bg-none-transparent items-center ">
           <h1 className="text-3xl font-bold text-orange-400">AFDAL.R</h1>
-          <div className="flex flex-row gap-15">
-            <a
-              href="#about"
-              className="text-md hover:text-orange-400 transition-colors duration-300"
-            >
-              About
-            </a>
-            <a
-              href="#education"
-              className="text-md hover:text-orange-400 transition-colors duration-300"
-            >
-              Education
-            </a>
-            <a
-              href="#skill"
-              className="text-md hover:text-orange-400 transition-colors duration-300"
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="text-md hover:text-orange-400 transition-colors duration-300"
-            >
-              Projects
-            </a>
+          <div className="hidden md:block">
+            <div className=" flex flex-row gap-15">
+              <a
+                href="#about"
+                className="text-md hover:text-orange-400 transition-colors duration-300"
+              >
+                About
+              </a>
+              <a
+                href="#education"
+                className="text-md hover:text-orange-400 transition-colors duration-300"
+              >
+                Education
+              </a>
+              <a
+                href="#skill"
+                className="text-md hover:text-orange-400 transition-colors duration-300"
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className="text-md hover:text-orange-400 transition-colors duration-300"
+              >
+                Projects
+              </a>
+            </div>
           </div>
         </nav>
 
@@ -72,7 +74,7 @@ export default function Hero() {
               </Link>
               {/* linkedin */}
               <Link
-                href="www.linkedin.com/in/mafdalrafi  "
+                href="https://www.linkedin.com/in/mafdalrafi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="duration-300 text-orange-500 text-3xl hover:scale-125 hover:text-orange-600 transition-colors"
