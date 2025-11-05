@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <main className="relative flex flex-col min-h-screen items-center justify-center overflow-hidden bg-[#0b0c1a] px-4">
+      <main className="relative flex flex-col min-h-screen text-white items-center justify-center overflow-hidden bg-[#0b0c1a] px-4">
         <div className="w-full max-w-[70rem]">
           <Hero />
           <About />
